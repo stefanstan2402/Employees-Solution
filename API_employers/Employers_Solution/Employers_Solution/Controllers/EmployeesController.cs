@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Employers_Solution.Data;
 using Employers_Solution.Models;
+using Swashbuckle.AspNetCore.Annotations;
+using NSwag.Annotations;
+using Swashbuckle.Swagger.Annotations;
 
 namespace Employers_Solution.Controllers
 {

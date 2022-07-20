@@ -17,7 +17,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="phone" class="form-label">Phone</label>
-                    <input type="text" class="form-control" id="phone" name="phone" [(ngModel)]="employeeDetails.phone">
+                    <input type="number" class="form-control" id="phone" name="phone" [(ngModel)]="employeeDetails.phone">
                 </div>
                 <div class="mb-3">
                     <label for="hiring_date" class="form-label">Hiring Date</label>
@@ -25,7 +25,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="salary" class="form-label">Salary</label>
-                    <input type="text" class="form-control" id="salary" name="salary" [(ngModel)]="employeeDetails.salary" >
+                    <input type="number" class="form-control" id="salary" name="salary" [(ngModel)]="employeeDetails.salary" >
                 </div>
                 <div class="mb-3">
                     <label for="department" class="form-label">Department</label>
@@ -33,7 +33,7 @@
                 </div>
 
                 <button type="submit" class="btn btn-primary mx-1">Update</button>
-                <button type="button" class="btn btn-danger" (click)="deleteEmpl(employeeDetails.id)">Delete</button>
+                <button type="button" class="btn btn-danger" (click)="deleteEmpl(employeeDetails.id!)">Delete</button>
             </form>
         </div>
     </div>

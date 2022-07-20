@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Employee } from 'src/app/models/employee.model';
 import { EmployeesService } from 'src/app/services/employees.service';
 import { DatePipe } from '@angular/common'
+import { EmployeesImpl } from 'src/generated/src/operations';
+import { Employee, EmployeesGetEmployeesResponse } from 'src/generated/src';
+import { Injectable } from '@angular/core';
 
 @Component({
   selector: 'app-employees-list',
@@ -9,14 +11,21 @@ import { DatePipe } from '@angular/common'
   styleUrls: ['./employees-list.component.css']
 })
 
-
+@Injectable({
+  providedIn: 'root' // just before your class
+})
 
 export class EmployeesListComponent implements OnInit {
 
   employees: Employee[] = [];
   hiringDates: string[] = [];
+  numberOfEmployees: number = 0;
 
-  constructor(private employeesService: EmployeesService, public datepipe: DatePipe) { }
+  constructor(
+    private employeesService: EmployeesService,
+     public datepipe: DatePipe,
+     
+     ) {}
 
   ngOnInit(): void {
     this.employeesService.getAllEmployees().subscribe(
@@ -31,9 +40,6 @@ export class EmployeesListComponent implements OnInit {
       }
     );
   }
-
-
-  
-
-  // change date format to dd/MM/yyyy for all employees
 }
+
+
