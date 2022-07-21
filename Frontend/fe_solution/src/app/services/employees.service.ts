@@ -44,7 +44,7 @@ export class EmployeesService {
     return from(this.serviceAutorest.putEmployee(id, this.optionsPut));
   }
 
-  deleteEmployee(id: string):Observable<any> {
+  deleteEmployee(id: string):Observable<void> {
     return from(this.serviceAutorest.deleteEmployee(id));
   }
 

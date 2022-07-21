@@ -65,7 +65,8 @@ export class EditEmployeeComponent implements OnInit {
 
   deleteEmpl(id: string) {
     this.employeeService.deleteEmployee(id);
-    this.router.navigate(['/employees']);
-    this.router.navigate(['/']);
+    this.router.navigate(['/employees']).then(() => {
+      window.location.reload();
+    })
   }
 }
